@@ -35,7 +35,7 @@
  */
 #define CY_FX_SLFIFO_GPIF_16_32BIT_CONF_SELECT (1)
 
-#define CY_FX_SLFIFO_DMA_BUF_COUNT      (3)                       /* Slave FIFO channel buffer count */
+#define CY_FX_SLFIFO_DMA_BUF_COUNT      (4)                       /* Slave FIFO channel buffer count */
 #define CY_FX_SLFIFO_DMA_TX_SIZE        (0)	                  /* DMA transfer size is set to infinite */
 #define CY_FX_SLFIFO_DMA_RX_SIZE        (0)	                  /* DMA transfer size is set to infinite */
 #define CY_FX_SLFIFO_THREAD_STACK       (0x0400)                  /* Slave FIFO application thread stack size */
@@ -70,7 +70,7 @@
 #define CY_FX_EP_BURST_LENGTH          (16)     /* Burst length in packets. The buffer size is allocated
                                                    to max packet size * burst length for all USB speeds
                                                    but the bursting is done only for USB SS speeds. */
-#define CY_FX_DMA_SIZE_MULTIPLIER      (2)      /* DMA buffer size multiplier. This is applied for all
+#define CY_FX_DMA_SIZE_MULTIPLIER      (1)      /* DMA buffer size multiplier. This is applied for all
                                                    USB speeds. The DMA buffer size allocated is
                                                    max packet size * burst length * multiplier. */
 
