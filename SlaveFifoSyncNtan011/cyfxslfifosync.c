@@ -204,6 +204,7 @@ CyFxSlFifoApplnStart (
         void)
 {
     uint16_t size = 0;
+    uint8_t burst = 1;
     CyU3PEpConfig_t epCfg;
     CyU3PDmaChannelConfig_t dmaCfg;
     CyU3PReturnStatus_t apiRetStatus = CY_U3P_SUCCESS;
@@ -217,14 +218,17 @@ CyFxSlFifoApplnStart (
     {
         case CY_U3P_FULL_SPEED:
             size = 64;
+            burst = 1;
             break;
 
         case CY_U3P_HIGH_SPEED:
             size = 512;
+            burst = 1;
             break;
 
         case  CY_U3P_SUPER_SPEED:
             size = 1024;
+            burst = CY_FX_EP_BURST_LENGTH;
             break;
 
         default:
@@ -236,8 +240,7 @@ CyFxSlFifoApplnStart (
     CyU3PMemSet ((uint8_t *)&epCfg, 0, sizeof (epCfg));
     epCfg.enable = CyTrue;
     epCfg.epType = CY_U3P_USB_EP_BULK;
-    epCfg.burstLen = (usbSpeed == CY_U3P_SUPER_SPEED) ?
-        (CY_FX_EP_BURST_LENGTH) : 1;
+    epCfg.burstLen = burst;
     epCfg.streams = 0;
     epCfg.pcktSize = size;
 
@@ -266,7 +269,7 @@ CyFxSlFifoApplnStart (
      * 1024 * burst length so that a full burst can be completed.
      * This will mean that a buffer will be available only after it
      * has been filled or when a short packet is received. */
-    dmaCfg.size  = (size * CY_FX_EP_BURST_LENGTH);
+    dmaCfg.size  = (size * burst);
     /* Multiply the buffer size with the multiplier
      * for performance improvement. */
     dmaCfg.size *= CY_FX_DMA_SIZE_MULTIPLIER;

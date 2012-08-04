@@ -35,7 +35,6 @@
 <option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.1934284661" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.none" valueType="enumerated"/>
 <option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths.252264493" name="Include paths (-I)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths" valueType="includePath">
 <listOptionValue builtIn="false" value="&quot;${FX3_INSTALL_PATH}\firmware\u3p_firmware\inc&quot;"/>
-<listOptionValue builtIn="false" value="&quot;..\.&quot;"/>
 </option>
 <option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.693944529" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="__CYU3P_TX__=1"/>
@@ -826,7 +825,6 @@
 <option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level.1292722750" name="Optimization level" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.optimization.level" value="org.eclipse.cdt.cross.arm.gnu.base.option.optimization.level.size" valueType="enumerated"/>
 <option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths.914423801" name="Include paths (-I)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.include.paths" valueType="includePath">
 <listOptionValue builtIn="false" value="&quot;${FX3_INSTALL_PATH}\firmware\u3p_firmware\inc&quot;"/>
-<listOptionValue builtIn="false" value="&quot;..\.&quot;"/>
 </option>
 <option id="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def.2100708849" name="Defined symbols (-D)" superClass="org.eclipse.cdt.cross.arm.gnu.c.compiler.option.preprocessor.def" valueType="definedSymbols">
 <listOptionValue builtIn="false" value="__CYU3P_TX__=1"/>
