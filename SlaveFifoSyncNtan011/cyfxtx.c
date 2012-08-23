@@ -39,7 +39,7 @@
 #ifdef CYU3P_FPGA
 #define CY_U3P_SYS_MEM_TOP           (0x40040000) /* Only 256 KB RAM available on FPGA. */
 #else /* Silicon */
-#define CY_U3P_SYS_MEM_TOP           (0x40080000) /* 512 KB RAM available on silicon. */
+#define CY_U3P_SYS_MEM_TOP           (0x40078000) /* 512 KB RAM available on silicon. */
 #endif
 
 /*
@@ -517,6 +517,10 @@ CyU3PDmaBufferFree (
         }
 
         CyU3PDmaBufMgrSetStatus (start, count, CyFalse);
+
+        /* Start the next buffer search at the top of the heap. This can help reduce fragmentation in cases where
+           most of the heap is allocated and then freed as a whole. */
+        glBufferManager.searchPos = 0;
     }
 
     /* Free the lock before we go. */

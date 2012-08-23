@@ -20,6 +20,10 @@
 .section .text
 .code 32
 
+.global jump
+jump:
+    bx  R0
+
 .global CyU3PToolChainInit
 CyU3PToolChainInit:
 
@@ -42,11 +46,10 @@ __user_initial_stackheap:
 # No heap is expected to be used by USB 3.0 platform drivers.
 # Place them as required by the user code
 .if  INTER == TRUE
-    BX      lr                 
-    ELSE
-    MOV     pc, lr             
+    bx      lr                 
+.else
+    mov     pc, lr             
 .endif
-
 
 .end
 

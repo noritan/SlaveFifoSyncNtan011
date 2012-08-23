@@ -5,7 +5,7 @@
       <I2SEnabled>False</I2SEnabled>
       <I2CEnabled>False</I2CEnabled>
       <SPIEnabled>False</SPIEnabled>
-      <I2SEnabled>True</I2SEnabled>
+      <I2SEnabled>False</I2SEnabled>
       <ADMuxedEnabled>False</ADMuxedEnabled>
       <InterfaceType>Master</InterfaceType>
       <CommunicationType>Synchronous</CommunicationType>
