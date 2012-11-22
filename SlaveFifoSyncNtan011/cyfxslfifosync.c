@@ -720,12 +720,8 @@ main (void)
         goto handle_fatal_error;
     }
 
-    /* Initialize the caches. Enable instruction cache and keep data cache disabled.
-     * The data cache is useful only when there is a large amount of CPU based memory
-     * accesses. When used in simple cases, it can decrease performance due to large 
-     * number of cache flushes and cleans and also it adds to the complexity of the
-     * code. */
-    status = CyU3PDeviceCacheControl (CyTrue, CyFalse, CyFalse);
+    /* Initialize the caches. Enable both Instruction and Data Caches. */
+    status = CyU3PDeviceCacheControl (CyTrue, CyTrue, CyTrue);
     if (status != CY_U3P_SUCCESS)
     {
         goto handle_fatal_error;
